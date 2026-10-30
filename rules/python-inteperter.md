@@ -1,0 +1,1 @@
+use `uv` intead of `python -m pip` for everything relted to Python.

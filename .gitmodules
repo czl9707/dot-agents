@@ -1,0 +1,6 @@
+[submodule "vendor/mattpocock-skills"]
+	path = vendor/mattpocock-skills
+	url = https://github.com/mattpocock/skills.git
+[submodule "vendor/blader-humanizer"]
+	path = vendor/blader-humanizer
+	url = https://github.com/blader/humanizer.git
