@@ -26,7 +26,6 @@ link() {
     ln -s "$src" "$dst"
 }
 
-link "$REPO_DIR/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
 link "$REPO_DIR/rules" "$CLAUDE_DIR/rules"
 
 mkdir -p "$CLAUDE_DIR/skills"
