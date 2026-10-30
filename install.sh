@@ -16,7 +16,7 @@ link() {
     if [ -L "$dst" ] && [ "$(readlink "$dst")" = "$src" ]; then
         return
     fi
-    if [ -e "$dst" ]; then
+    if [ -L "$dst" ] || [ -e "$dst" ]; then
         if [ -L "$dst" ] || [ -f "$dst" ]; then
             rm "$dst"
         else
