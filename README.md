@@ -7,11 +7,12 @@ Claude Code global config and cross-agent skills, shared across machines.
 ```
 AGENTS.md        agent entry doc for this repo
 rules/           global instructions, loaded from ~/.claude/rules/
-skills/caveman/  vendored copy of a skill deleted upstream from mattpocock/skills (commit 221ffca); carries a trigger-phrase tweak in its description
+skills/caveman    symlink into vendor/ submodules
 skills/quality-review/  own skill
 skills/<name>    symlinks into vendor/ submodules
 vendor/mattpocock-skills   github.com/mattpocock/skills
 vendor/blader-humanizer    github.com/blader/humanizer
+vendor/juliusbrussee-caveman   github.com/JuliusBrussee/caveman (shallow clone; the skill lives at skills/caveman inside the repo)
 install.sh       links everything into ~/.claude and ~/.agents
 ```
 
@@ -32,5 +33,6 @@ cd dot-agents
 ```
 git submodule update --remote vendor/mattpocock-skills
 git submodule update --remote vendor/blader-humanizer
+git submodule update --remote vendor/juliusbrussee-caveman
 git add vendor && git commit -m "update skill submodules"
 ```

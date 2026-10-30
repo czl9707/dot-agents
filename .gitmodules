@@ -4,3 +4,6 @@
 [submodule "vendor/blader-humanizer"]
 	path = vendor/blader-humanizer
 	url = https://github.com/blader/humanizer.git
+[submodule "vendor/juliusbrussee-caveman"]
+	path = vendor/juliusbrussee-caveman
+	url = https://github.com/JuliusBrussee/caveman.git
