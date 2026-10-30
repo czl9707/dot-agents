@@ -6,6 +6,7 @@ set -eu
 
 REPO_DIR=$(cd "$(dirname "$0")" && pwd)
 CLAUDE_DIR="${CLAUDE_DIR:-$HOME/.claude}"
+AGENTS_DIR="${AGENTS_DIR:-$HOME/.agents}"
 
 git -C "$REPO_DIR" submodule update --init
 
@@ -33,4 +34,11 @@ for entry in "$REPO_DIR"/skills/*; do
     link "$entry" "$CLAUDE_DIR/skills/$(basename "$entry")"
 done
 
-echo "Linked config from $REPO_DIR into $CLAUDE_DIR"
+# Skills are also linked into ~/.agents/skills, the cross-agent location
+# used by opencode, gemini and the skills CLI.
+mkdir -p "$AGENTS_DIR/skills"
+for entry in "$REPO_DIR"/skills/*; do
+    link "$entry" "$AGENTS_DIR/skills/$(basename "$entry")"
+done
+
+echo "Linked config from $REPO_DIR into $CLAUDE_DIR and $AGENTS_DIR"
